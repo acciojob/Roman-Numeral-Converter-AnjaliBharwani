@@ -10,8 +10,19 @@ function convertToRoman(num) {
     };
 
   //your code here
+	 let romanNumeral = ''; // Initialize an empty string to store the Roman numeral
 
+  for (let key = 0; key < 7; key++) {
+    while (num >= obj[key][1]) {
+      romanNumeral += obj[key][0]; // Append the Roman numeral symbol to the result
+      num -= obj[key][1]; // Subtract the value from the input number
+    }
+  }
+
+  return romanNumeral;
 }
+
+
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
 
 console.log(convertToRoman(36));
